@@ -1,5 +1,5 @@
 function fetchBooks() {
-  fetch('https://anapioficeandfire.com/api/books').then((res) =>{
+ return fetch('https://anapioficeandfire.com/api/books').then((res) =>{
     return res.json()
   }).then((json) => {
     renderBooks(json)
@@ -10,7 +10,7 @@ function renderBooks(json) {
   for(let book of json){
   const ul = document.createElement('ul')
   const li = document.createElement('li')
-  document.body.append(ul);
+  document.body.appendChild(ul);
     li.innerText = book.name;
     ul.appendChild(li);
   }
